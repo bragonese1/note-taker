@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
-const { prototype } = require('events');
+
 
 // init express app and define port
 const app = express();
@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3001;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// middleware to allow the publice directory to be accessed directly via browser
+// middleware to allow the public directory to be accessed directly via browser
 app.use(express.static('public'));
 
 // setting up the routes for API requests using apiRoutes
