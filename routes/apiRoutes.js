@@ -27,4 +27,18 @@ router.post('/notes', (req, res) => {
             });
         });
 });
+// DELETE request for deleting a note by its ID
+router.delete('/notes/:id', (req, res) => {
+    const noteId = req.params.id;
+    fs.readFile(path.join(__dirname, '../db/db.json'), 'utf8', (err, data) => {
+        if (err) throw err;
+        const notes = JSON.parse(data);
+        const updatedNotes = notes.filter(note => note.id !== noteId);
+        fs.writeFile(path.join(__dirname, '../db/db.json'), JSON.stringify(updatedNotes), (err) => {
+            if (err) throw err;
+            res.json({ message: 'Guess what! The note was deleted successfully' });
+        });
+    });
+});
 
+module.exports = router;
