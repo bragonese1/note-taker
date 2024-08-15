@@ -32,6 +32,8 @@ The first step is to click get started. After that you can insert a title for yo
 <br>
 - GitHub Repo: https://github.com/bragonese1/note-taker
 
+![notetakergif](./assets/note-taker-gif.gif)
+
 ## Contributions
 Please fork my repo, add contributions, and push your commits using feature branches. I will review them all. Thank you
 
